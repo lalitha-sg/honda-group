@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newtask</title>
+    <style>
+        .newTask {
+            width: 50%;
+            margin: 20px auto;
+            border: 1px solid blue;
+            text-align: center;
+        }
+
+        div {
+            margin:20px auto ;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <form class="newTask" action="submit">
+        <h2>New task</h2>
+        <div class="taskName">
+            <label for="taskName"> Task name:</label>
+            <input type="text" id="taskName">
+        </div>
+
+        <div class="taskDes">
+            <label for="taskDes"> Description:</label> <br>
+            <input type="textarea" id="taskDes">
+
+        </div>
+
+        <div class="assignTo">
+            <label for="assignTo">Assigned to:</label>
+            <select id="assignTo">
+                <option>Meiri</option>
+                <option>Liz</option>
+                <option>Yi</option>
+                <option>Others</option>
+            </select>
+        </div>
+
+        <div class="dueDate">
+            <label for="dueDate"> Description:</label>
+            <input type="date" id="dueDate">
+        </div>
+
+        <div class="taskStatus">
+            <Span>Task Status: </Span>
+            <input type="radio" name="taskStatus" id="toDo" checked="checked">
+            <label for="toDo"> To do:</label>
+            <input type="radio" name="taskStatus" id="inPro" >
+            <label for="inPro"> In progress:</label>
+            <input type="radio" name="taskStatus" id="done" >
+            <label for="done"> Done:</label>
+        </div>
+
+        <div class="btn">
+            <input type="submit" value="Submit">
+            <input type="reset"value="Reset" >
+            <button>Cancel</button>
+        </div>
+
+
+
+    </form>
+</body>
+
+</html>

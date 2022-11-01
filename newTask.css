@@ -1,0 +1,14 @@
+.newTask {
+    width: 50%;
+    margin: 20px auto;
+    border: 1px solid blue;
+    text-align: center;
+}
+
+div {
+    margin:20px auto ;
+
+}
+.taskForm{
+   boarder: red solid 1px; 
+}

@@ -3,11 +3,12 @@
 }
 
 .newTask {
-    width: 50%;
+    width: 60%;
     margin: 20px auto;
     border: 2px solid gray;
     text-align: center;
     padding: 20px;
+
 }
 
 div {
@@ -22,11 +23,11 @@ div {
     border: none;
     color: white;
     padding: 15px 32px;
-    text-align: justify;
+    text-align:inherit;
     text-decoration: none;
     display: inline-block;
-    font-size: 1rem;
-    margin-bottom: 10px;
+    font-size: 1.5rem;
+  
   }
 
   .taskStatus {
@@ -37,4 +38,14 @@ div {
     display: flex;
     justify-content: center;
     margin: 0;
+}
+
+@media screen and (max-width: 390px)
+{
+    .radio-btns {
+        display: inline;
+    }
+    .newTask {
+        width: 75%;
+    }
 }

@@ -21,3 +21,7 @@ text-align: center;
   display: inline-block;
   font-size: 0.9rem;
 }
+
+span {
+  padding-bottom: 20px;
+}

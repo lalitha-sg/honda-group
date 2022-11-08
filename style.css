@@ -39,6 +39,17 @@ html {
     margin-bottom: 0;
     max-width: 70%;
 }
+.form-control {
+    margin-left: 20%;
+}
+
+.words {
+    margin-left: 20%;
+}
+.btn-primary {
+    margin-left: 45%;
+    margin-top: 15px;
+}
 
 #email-help {
     margin: 0;
@@ -46,11 +57,8 @@ html {
 
 .new-sign-in {
     color: white;
+    text-align: center;
 }
 a .sign-up {
     color: #e6f2f8;
-}
-
-@media screen and (max-width: 390px) {
-    
 }

@@ -15,20 +15,14 @@ function validateTaskForm() {
       return false;
     }
     let dueDate = document.forms["taskForm"]["dueDate"].value;
-    if (assign == "") {
-        alert("Date must be in the future!");
-        return false;
-      }
-      let date = document.getElementById("dueDate").value;
-      let varDate = new Date(date); //dd-mm-YYYY
-      let today = new Date();
-
-    if(varDate >= today) {
-        alert("Please set a future date!");
-        return false;
-    }
+    let today = new Date();
+    let dateToday = String(today.getDate()).padStart(2, "0");
+    let monthToday = String(today.getMonth() + 1).padStart(2, "0");
+    let yearToday = today.getFullYear();
+  let minDate = `${yearToday}-${monthToday}-${dateToday}`;
+ //dueDate.min = minDate;
+ if(minDate > dueDate) {
+    alert("Date must be in the future!")
+ }
 }
-/*if (date == "" || ) {
-      alert("Please set a future date!");
-      return false;
-    } */
+

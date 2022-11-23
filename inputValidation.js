@@ -19,26 +19,16 @@ function validateTaskForm() {
         alert("Date must be in the future!");
         return false;
       }
-}
-    let date = document.getElementById("dueDate").value;
-    let varDate = new Date(date); //dd-mm-YYYY
-    let today = new Date();
+      let date = document.getElementById("dueDate").value;
+      let varDate = new Date(date); //dd-mm-YYYY
+      let today = new Date();
 
-if(varDate >= today) {
-alert("Please set a future date!");
-return false;
+    if(varDate >= today) {
+        alert("Please set a future date!");
+        return false;
+    }
 }
 /*if (date == "" || ) {
       alert("Please set a future date!");
       return false;
     } */
-  };console.log(new Date);
-let date = document.getElementById("todaysDate");
-window.addEventListener("load", myFunction);
-  function myFunction() {
-    let d = new Date();
-    let month = d.getMonth();
-    let correctMonth = month + 1;
-    date.innerHTML= d.getDate() + "/" + correctMonth + "/" + d.getFullYear();
-    document.getElementById("todaysDate").style.color = "white";
-  };

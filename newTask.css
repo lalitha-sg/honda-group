@@ -1,8 +1,14 @@
+* {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";;
+}
+
 .newTask {
-    width: 50%;
+    width: 60%;
     margin: 20px auto;
-    border: 1px solid blue;
+    border: 2px solid gray;
     text-align: center;
+    padding: 20px;
+
 }
 
 div {
@@ -10,5 +16,36 @@ div {
 
 }
 .taskForm{
-   boarder: red solid 1px; 
+   border: gray solid 2px; 
+}
+
+.btn-primary {
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align:inherit;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.5rem;
+  
+  }
+
+  .taskStatus {
+    text-align: center;
+  }
+
+.radio-btns {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+@media screen and (max-width: 390px)
+{
+    .radio-btns {
+        display: inline;
+    }
+    .newTask {
+        width: 75%;
+    }
 }

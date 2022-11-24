@@ -13,7 +13,7 @@
 
 <body>
 <div class="taskform">
-    <form method="get" class="newTask" action="submit" name="taskForm" onsubmit="return validateTaskForm()">
+    <form method="get" class="newTask" name="taskForm" id="taskForm" onsubmit="return validateTaskForm()">
         <h2>New task</h2>
         <div class="taskName">
             <label for="taskName"> Task name:</label><br>
@@ -46,21 +46,24 @@
             <div class="radio-btns" name="radio">
                 <div>
                     <label for="toDo"> To do:</label>
-                    <input type="radio" name="taskStatus" id="toDo" checked="checked">
+                    <input type="radio" name="taskStatus" id="toDo" value="To Do" checked="checked">
                 </div>
                 <div>
                     <label for="inPro"> In progress:</label>
-                    <input type="radio" name="taskStatus" id="inPro">
+                    <input type="radio" name="taskStatus" id="inPro" value="In Progress">
                 </div>
                 <div>
                     <label for="reviewing"> Reviewing:</label>
-                 <input type="radio" name="taskStatus" id="reviweing" >
+                 <input type="radio" name="taskStatus" id="reviweing" value="review">
                 </div>
                 <div>
                     <label for="done"> Done:</label>
-                 <input type="radio" name="taskStatus" id="done" >
+                 <input type="radio" name="taskStatus" id="done" value="done">
                 </div>
             </div>
+        </div>
+        <div id="taskList">
+
         </div>
 
         <div class="btn">

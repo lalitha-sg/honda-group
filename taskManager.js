@@ -10,8 +10,8 @@ window.addEventListener('load', () => {
 
 taskForm.addEventListener('submit', (event) => {
   event.preventDefault();
-   if(!validateTaskForm()){ 
-    console.log('validate fails'); return 
+   if(!validateTaskForm()){
+    console.log('validate fails'); return
   }
 
   console.log(taskForm['taskName'].value)
@@ -19,7 +19,6 @@ taskForm.addEventListener('submit', (event) => {
   console.log(`formdata:${formData}`)
   const task = new TaskManager()
 
-  
   task._taskName = taskForm['taskName'].value
   task._desc = taskForm['taskDes'].value
   task._status = taskForm['taskStatus'].value
@@ -64,13 +63,11 @@ taskForm.addEventListener('submit', (event) => {
 class TaskManager {
   static id=0;
   constructor( taskName, desc, assignTo, dueDate, status) {
-    
     this._taskName = taskName;
     this._desc = desc;
     this._assignTo = assignTo;
     this._dueDate = dueDate;
     this._status = status;
-    
 
 
   }
@@ -91,7 +88,6 @@ class TaskManager {
   }
 
   static addTask(task) {
-      
     task._id =TaskManager.getId()
      const allTasks= JSON.parse(window.localStorage.getItem('Tasks')) || [];
      allTasks.push(task)
@@ -112,7 +108,7 @@ class TaskManager {
 
 
 
-  getTaskList(status) {
+  getTaskList() {
 
     return JSON.parse(window.localStorage.getItem('Tasks'));
 
@@ -133,8 +129,14 @@ class TaskManager {
 
   }
 
-
+deleteTask(id) {
+  let allTasks = getTaskList();
+  allTasks = allTasks.filter(task => {task._id != id});
+  window.localStorage.setItem('Tasks',JSON.stringify(allTasks));
+}
   // getTaskByStatus(status){
 
   // }
 }
+
+export default TaskManager;

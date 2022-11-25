@@ -1,5 +1,4 @@
-
-import validateTaskForm from "./inputValidation.js"
+//import validateTaskForm from "./inputValidation.js"
 
 let taskForm = document.getElementById('taskForm')
 let tasksList = []
@@ -10,8 +9,9 @@ window.addEventListener('load', () => {
 
 taskForm.addEventListener('submit', (event) => {
   event.preventDefault();
-   if(!validateTaskForm()){ 
-    console.log('validate fails'); return 
+  if (!validateTaskForm()) {
+    console.log('validate fails');
+    return
   }
 
   console.log(taskForm['taskName'].value)
@@ -19,7 +19,7 @@ taskForm.addEventListener('submit', (event) => {
   console.log(`formdata:${formData}`)
   const task = new TaskManager()
 
-  
+
   task._taskName = taskForm['taskName'].value
   task._desc = taskForm['taskDes'].value
   task._status = taskForm['taskStatus'].value
@@ -28,7 +28,7 @@ taskForm.addEventListener('submit', (event) => {
 
   console.log(`task name :${task._taskName}`)
   // console.log(task)
-      TaskManager.addTask(task)
+  TaskManager.addTask(task)
 
 
   const allTasks = task.getTaskList();
@@ -40,7 +40,7 @@ taskForm.addEventListener('submit', (event) => {
 
   // const tasksDiv = task.getTasks()
   const displayNames = {
-    _id:'Id',
+    _id: 'Id',
     _taskName: 'Task Name',
     _desc: 'Description',
     _assignTo: 'Assign To',
@@ -56,23 +56,38 @@ taskForm.addEventListener('submit', (event) => {
     }
 
   }
-  window.location.href='/second-page.html'
+
+  // closeForm();
+  // window.location.href = '/second-page.html'
 
 })
 
+const openForm = document.getElementById("addTask");
+openForm.addEventListener('click', addTaskForm)
+
+
+const closeForm = document.getElementById("closeForm");
+closeForm.addEventListener('click', closeTaskForm)
+
+
+function addTaskForm() {
+  document.getElementById('taskForm').style.display = "block";
+}
+
+function closeTaskForm() {
+  document.getElementById('taskForm').style.display = "none";
+}
+
 
 class TaskManager {
-  static id=0;
-  constructor( taskName, desc, assignTo, dueDate, status) {
-    
+  static id = 0;
+  constructor(taskName, desc, assignTo, dueDate, status) {
+
     this._taskName = taskName;
     this._desc = desc;
     this._assignTo = assignTo;
     this._dueDate = dueDate;
     this._status = status;
-    
-
-
   }
   get taskName() {
     return this._taskName;
@@ -91,33 +106,26 @@ class TaskManager {
   }
 
   static addTask(task) {
-      
-    task._id =TaskManager.getId()
-     const allTasks= JSON.parse(window.localStorage.getItem('Tasks')) || [];
-     allTasks.push(task)
-     window.localStorage.setItem('Tasks',JSON.stringify(allTasks))
+
+    task._id = TaskManager.getId()
+    const allTasks = JSON.parse(window.localStorage.getItem('Tasks')) || [];
+    allTasks.push(task)
+    window.localStorage.setItem('Tasks', JSON.stringify(allTasks))
 
 
   }
 
-   static getId(){
-    let allTasks=JSON.parse( localStorage.getItem('Tasks') ) ||[]
-     let lastTask = allTasks? allTasks.pop() :null
-     let lastId =lastTask?lastTask._id : 0;
-     console.log(`id is ${lastId}`)
-       return ++lastId;
-   }
-
-
-
+  static getId() {
+    let allTasks = JSON.parse(localStorage.getItem('Tasks')) || []
+    let lastTask = allTasks ? allTasks.pop() : null
+    let lastId = lastTask ? lastTask._id : 0;
+    console.log(`id is ${lastId}`)
+    return ++lastId;
+  }
 
 
   getTaskList(status) {
-
     return JSON.parse(window.localStorage.getItem('Tasks'));
-
-
-
   }
 
   taskListByStatus(status) {
@@ -128,8 +136,6 @@ class TaskManager {
       console.log(i);
     }
     console.log("Task List by" + taskListByStatus);
-
-
 
   }
 

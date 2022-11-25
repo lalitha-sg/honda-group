@@ -150,3 +150,32 @@ input[type=range] {
       align-content: space-around;
     }
   }
+
+
+
+  .newTask {
+    width: 60%;
+    margin: 20px auto;
+    border: 2px solid gray;
+    text-align: center;
+    padding: 20px;
+
+}
+
+
+.taskForm{
+   border: gray solid 2px; 
+}
+
+
+  .taskStatus {
+    text-align: center;
+  }
+
+.radio-btns {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+

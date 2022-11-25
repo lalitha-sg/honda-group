@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link href='./second-page.css' rel='stylesheet' type="text/css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-        <script src="https://kit.fontawesome.com/50de1f03ce.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-        <title>Taskii (name to be confirmed)</title>
-    </head>
-    <body>
-<nav class="navbar">
-  <div class="wrap">
-  <div id="logo"><a class="navbar-brand" href="#">
-    <img src="Taskii-logo.png" alt="Taskii-logo">
-  </a></div>
-  <nav class="nav nav-pill nav-fill">
-    <a class="nav-item nav-link" href="#">Add Task</a>
-    <a class="nav-item nav-link" href="#">My Completed Tasks</a>
-    <a class="nav-item nav-link" href="#">Settings</a>
-    <a class="nav-item nav-link" href="#">Log Out</a>
-    <span id="todaysDate">Date</span>
-  </nav>
 
-  <div id="wrapper usercircle">
-    <form class="form-inline">
-      <button class="btn my-2 my-sm-0" type="button"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></button>
-    </form>
-  </div>
-</div>
+<head>
+
+  <link href='./second-page.css' rel='stylesheet' type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/50de1f03ce.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <title>Taskii (name to be confirmed)</title>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="wrap">
+      <div id="logo"><a class="navbar-brand" href="#">
+          <img src="Taskii-logo.png" alt="Taskii-logo">
+        </a></div>
+      <nav class="nav nav-pill nav-fill">
+        <a class="nav-item nav-link" href="#" onclick="openForm(); return false;">Add Task</a>
+        <a class="nav-item nav-link" href="#">My Completed Tasks</a>
+        <a class="nav-item nav-link" href="#">Settings</a>
+        <a class="nav-item nav-link" href="#">Log Out</a>
+        <span id="todaysDate">Date</span>
+      </nav>
+
+      <div id="wrapper usercircle">
+        <form class="form-inline">
+          <button class="btn my-2 my-sm-0" type="button"><i class="fa fa-user-circle fa-2x"
+              aria-hidden="true"></i></button>
+        </form>
+      </div>
+    </div>
   </nav>
-    </header>
-       <!-- <navbar>
+  </header>
+  <!-- <navbar>
         <ul class="nav">
             <li class="nav-item">
               <a class="nav-link active" href="#">Add Task</a>
@@ -46,69 +51,158 @@
               </li>
           </ul>
           </navbar> -->
-          <div class="card" id="wireframe">
-            <a href="./description-kaneez-honda group/description-kaneez.html">
-            <div class="card-body">
-              <h5 class="card-title">Wireframe</h5></a>
-              <h6 class="assigned-by">Assigned to: Meiri H.</h6>
-              <div class="slider">
-                <input type="range" min="0" max="100" step="25" value="100">
-                <p id="rangeValue"></p>
-                </div>
-              <p class="card-text">Description</p>
-            </div>
-          </div>
-          <div class="card">
-            <a href="go-to-page-HTML">
-            <div class="card-body">
-              <h5 class="card-title">HTML</h5></a>
-              <h6 class="assigned-by">Assigned to: Lalitha G.</h6>
-              <div class="slider">
-                <input type="range" min="0" max="100" step="25" value="100">
-                <p id="rangeValue"></p>
-                </div>
-              <p class="card-text">Description</p>
-            </div>
-          </div>
-          <div class="card">
-            <a href="go-to-page-CSS">
-            <div class="card-body">
-              <h5 class="card-title">CSS</h5></a>
-              <h6 class="assigned-by">Assigned to: Meiri H.</h6>
-              <div class="slider">
-                <input type="range" min="0" max="100" step="25" value="100">
-                <p id="rangeValue"></p>
-                </div>
-              <p class="card-text">Description</p>
-            </div>
-          </div>
-          <div class="card">
-            <a href="go-to-page-JavaScript">
-            <div class="card-body">
-              <h5 class="card-title">JavaScript</h5></a>
-              <h6 class="assigned-by">Assigned to: Meiri H.</h6>
-              <div class="slider">
-                <input type="range" min="0" max="100" step="25" value="100">
-                <p id="rangeValue"></p>
-                </div>
-              <p class="card-text">Description</p>
-            </div>
-          </div>
-          <div class="card">
-            <a href="go-to-page-Node.js">
-            <div class="card-body">
-              <h5 class="card-title">Node</h5></a>
-              <h6 class="assigned-by">Assigned to: Kaneez Z.</h6>
-              <div class="slider">
-                <input type="range" min="0" max="100" step="25" value="100">
-                <p id="rangeValue"></p>
-                </div>
-              <p class="card-text">Description</p>
-            </div>
-          </div>
 
-          <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-<script src="./second-page.js"></script>
-    </body>
+
+
+  <!-- Task Form -->
+
+  <div class="taskform" id="taskForm" style="display:none">
+    <form method="get" class="newTask" name="taskForm" id="taskForm" onsubmit="return validateTaskForm()">
+      <h2>New task</h2>
+      <div class="taskName">
+        <label for="taskName"> Task name:</label><br>
+        <input type="text" name="taskName" id="taskName">
+      </div>
+
+      <div class="taskDes">
+        <label for="taskDes"> Description:</label> <br>
+        <input type="textarea" name="taskDes" id="taskDes">
+
+      </div>
+
+      <div class="assignTo">
+        <label for="assignTo">Assigned to:</label>
+        <select id="assignTo" name="assignTo">
+          <option>Meiri</option>
+          <option>Lalitha</option>
+          <option>Kaneez</option>
+          <option>Kanwar</option>
+        </select>
+      </div>
+
+      <div class="dueDate">
+        <label for="dueDate"> Due Date:</label>
+        <input type="date" name="dueDate" id="dueDate">
+      </div>
+
+      <div class="taskStatus">
+        <Span>Task Status: </Span><br>
+        <div class="radio-btns" name="radio">
+          <div>
+            <label for="toDo"> To do:</label>
+            <input type="radio" name="taskStatus" id="toDo" value="To Do" checked="checked">
+          </div>
+          <div>
+            <label for="inPro"> In progress:</label>
+            <input type="radio" name="taskStatus" id="inPro" value="In Progress">
+          </div>
+          <div>
+            <label for="reviewing"> Reviewing:</label>
+            <input type="radio" name="taskStatus" id="reviweing" value="review">
+          </div>
+          <div>
+            <label for="done"> Done:</label>
+            <input type="radio" name="taskStatus" id="done" value="done">
+          </div>
+        </div>
+      </div>
+      <div id="taskList">
+
+      </div>
+
+      <div class="btn">
+        <input class="btn btn-primary" type="submit" value="Submit" id="submit">
+        <input class="btn btn-primary" type="reset" value="Reset">
+        <button class="btn btn-primary" onclick="closeForm()">Close</button>
+      </div>
+    </form>
+  </div>
+
+  
+
+  <div class="card" id="wireframe">
+    <a href="./description-kaneez-honda group/description-kaneez.html">
+      <div class="card-body">
+        <h5 class="card-title">Wireframe</h5>
+    </a>
+    <h6 class="assigned-by">Assigned to: Meiri H.</h6>
+    <div class="slider">
+      <input type="range" min="0" max="100" step="25" value="100">
+      <p id="rangeValue"></p>
+    </div>
+    <p class="card-text">Description</p>
+  </div>
+  </div>
+  <div class="card">
+    <a href="go-to-page-HTML">
+      <div class="card-body">
+        <h5 class="card-title">HTML</h5>
+    </a>
+    <h6 class="assigned-by">Assigned to: Lalitha G.</h6>
+    <div class="slider">
+      <input type="range" min="0" max="100" step="25" value="100">
+      <p id="rangeValue"></p>
+    </div>
+    <p class="card-text">Description</p>
+  </div>
+  </div>
+  <div class="card">
+    <a href="go-to-page-CSS">
+      <div class="card-body">
+        <h5 class="card-title">CSS</h5>
+    </a>
+    <h6 class="assigned-by">Assigned to: Meiri H.</h6>
+    <div class="slider">
+      <input type="range" min="0" max="100" step="25" value="100">
+      <p id="rangeValue"></p>
+    </div>
+    <p class="card-text">Description</p>
+  </div>
+  </div>
+  <div class="card">
+    <a href="go-to-page-JavaScript">
+      <div class="card-body">
+        <h5 class="card-title">JavaScript</h5>
+    </a>
+    <h6 class="assigned-by">Assigned to: Meiri H.</h6>
+    <div class="slider">
+      <input type="range" min="0" max="100" step="25" value="100">
+      <p id="rangeValue"></p>
+    </div>
+    <p class="card-text">Description</p>
+  </div>
+  </div>
+  <div class="card">
+    <a href="go-to-page-Node.js">
+      <div class="card-body">
+        <h5 class="card-title">Node</h5>
+    </a>
+    <h6 class="assigned-by">Assigned to: Kaneez Z.</h6>
+    <div class="slider">
+      <input type="range" min="0" max="100" step="25" value="100">
+      <p id="rangeValue"></p>
+    </div>
+    <p class="card-text">Description</p>
+  </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+  </script>
+  <script src="./second-page.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./inputValidation.js"></script>
+  <script src="./taskManager.js"></script>
+
+
+</body>

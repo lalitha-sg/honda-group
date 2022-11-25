@@ -56,6 +56,7 @@ taskForm.addEventListener('submit', (event) => {
     }
 
   }
+  window.location.href='/second-page.html'
 
 })
 
@@ -90,14 +91,24 @@ class TaskManager {
   }
 
   static addTask(task) {
-      TaskManager.id++;
-    task._id =TaskManager.id
+      
+    task._id =TaskManager.getId()
      const allTasks= JSON.parse(window.localStorage.getItem('Tasks')) || [];
      allTasks.push(task)
      window.localStorage.setItem('Tasks',JSON.stringify(allTasks))
 
 
   }
+
+   static getId(){
+    let allTasks=JSON.parse( localStorage.getItem('Tasks') ) ||[]
+     let lastTask = allTasks? allTasks.pop() :null
+     let lastId =lastTask?lastTask._id : 0;
+     console.log(`id is ${lastId}`)
+       return ++lastId;
+   }
+
+
 
 
 

@@ -23,6 +23,8 @@ function validateTaskForm() {
  //dueDate.min = minDate;
  if(minDate > dueDate) {
     alert("Date must be in the future!")
+    return false;
  }
+  else return true;
 }
-
+export default validateTaskForm

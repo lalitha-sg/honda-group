@@ -1,17 +1,25 @@
+
+import validateTaskForm from "./inputValidation.js"
+
 let taskForm = document.getElementById('taskForm')
 let tasksList = []
 window.addEventListener('load', () => {
-  tasksList = JSON.parse(localStorage.getItem('Tasks')) || [];
+  // tasksList = JSON.parse(localStorage.getItem('Tasks')) || [];
   console.log(`tasklist :${tasksList}`)
 })
+
 taskForm.addEventListener('submit', (event) => {
   event.preventDefault();
+   if(!validateTaskForm()){ 
+    console.log('validate fails'); return 
+  }
+
   console.log(taskForm['taskName'].value)
   const formData = new FormData(taskForm);
   console.log(`formdata:${formData}`)
   const task = new TaskManager()
 
-  task._id = tasksList.length + 1;
+  
   task._taskName = taskForm['taskName'].value
   task._desc = taskForm['taskDes'].value
   task._status = taskForm['taskStatus'].value
@@ -20,9 +28,9 @@ taskForm.addEventListener('submit', (event) => {
 
   console.log(`task name :${task._taskName}`)
   // console.log(task)
-  tasksList.push(task)
+      TaskManager.addTask(task)
 
-  window.localStorage.setItem('Tasks', JSON.stringify(tasksList))
+
   const allTasks = task.getTaskList();
 
   task.taskListByStatus("To Do");
@@ -32,6 +40,7 @@ taskForm.addEventListener('submit', (event) => {
 
   // const tasksDiv = task.getTasks()
   const displayNames = {
+    _id:'Id',
     _taskName: 'Task Name',
     _desc: 'Description',
     _assignTo: 'Assign To',
@@ -39,7 +48,8 @@ taskForm.addEventListener('submit', (event) => {
   }
 
   for (let task of allTasks) {
-    for (key in task) {
+    for (let key in task) {
+      console.log(`key is ${key}`)
       const markup = `<span>${displayNames[key]}:${task[key]}<br></span>`
       document.getElementById('taskList').innerHTML += markup
 
@@ -47,63 +57,19 @@ taskForm.addEventListener('submit', (event) => {
 
   }
 
-
-
-
-
-
-
-  //  addTask(task){
-
-  //   const task = [{
-  //     "taskName" : "llllllllllllllll",
-  //     "assignTo" : "xxxxxxxxxx",
-
-  //   }]
-
-  //  }
-
-
-
-
-
-  // for(let task of allTasks){
-  //   console.log(task[0]);
-  //   for(key in task){
-  //     const markup = `<div>
-  //     <span>${key}:${task[key]}</span>
-  //     <div>`;
-  //     document.getElementById('taskList').innerHTML += markup;
-  //   }
-
-  console.log(task);
-  //}
-
-
-
-
-
-
-
-
-
-
-
-
 })
 
 
 class TaskManager {
-  constructor(id, taskName, desc, assignTo, dueDate, status) {
-    this._id = id;
+  static id=0;
+  constructor( taskName, desc, assignTo, dueDate, status) {
+    
     this._taskName = taskName;
     this._desc = desc;
     this._assignTo = assignTo;
     this._dueDate = dueDate;
     this._status = status;
-    //    this._tasks=[{id:1,
-    //   taskName:test1,
-    // desc:'test'}]
+    
 
 
   }
@@ -123,11 +89,14 @@ class TaskManager {
     return this._status;
   }
 
-  saveTask() {
-    //    let task ={id:this._id,
-    //     taskName:this._taskName,
-    //   }
-    // window.localStorage.setItem('tasks',JSON.stringify(task))
+  static addTask(task) {
+      TaskManager.id++;
+    task._id =TaskManager.id
+     const allTasks= JSON.parse(window.localStorage.getItem('Tasks')) || [];
+     allTasks.push(task)
+     window.localStorage.setItem('Tasks',JSON.stringify(allTasks))
+
+
   }
 
 

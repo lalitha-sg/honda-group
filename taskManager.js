@@ -1,82 +1,53 @@
-import validateTaskForm from "./inputValidation.js"
+// import validateTaskForm from "./inputValidation.js"
 
-let taskForm = document.getElementById('taskForm')
-let tasksList = []
-window.addEventListener('load', () => {
-  // tasksList = JSON.parse(localStorage.getItem('Tasks')) || [];
-  console.log(`tasklist :${tasksList}`)
-})
+// let taskForm = document.getElementById('taskForm')
+// let tasksList = []
+// window.addEventListener('load', () => {
+  
+//   console.log(`tasklist :${tasksList}`)
+// })
 
-const openForm = document.getElementById("addTask");
-openForm.addEventListener('click', addTaskForm)
-
-
-const closeForm = document.getElementById("closeForm");
-closeForm.addEventListener('click', closeTaskForm)
+// const openForm = document.getElementById("addTask");
+// openForm.addEventListener('click', addTaskForm)
 
 
-function addTaskForm() {
-  document.getElementById('taskFormData').style.display = "block";
-}
-
-function closeTaskForm() {
-  document.getElementById('taskFormData').style.display = "none";
-}
+// const closeForm = document.getElementById("closeForm");
+// closeForm.addEventListener('click', closeTaskForm)
 
 
-taskForm.addEventListener('submit', (event) => {
+// function addTaskForm() {
+//   document.getElementById('taskFormData').style.display = "block";
+// }
 
-  console.log("When Submit happen")
-  event.preventDefault();
-  if (!validateTaskForm()) {
-    console.log('validate fails');
-    return
-  }
-  //  console.log(taskForm['taskName'].value)
-  const formData = new FormData(taskForm);
-  console.log(`formdata:${formData}`)
-  const task = new TaskManager()
-  task._taskName = taskForm['taskName'].value
-  task._desc = taskForm['taskDes'].value
-  task._status = taskForm['taskStatus'].value
-  task._assignTo = taskForm['assignTo'].value
-  task._dueDate = taskForm['dueDate'].value
+// function closeTaskForm() {
+//   document.getElementById('taskFormData').style.display = "none";
+// }
 
-  console.log(`task name :${task._taskName}`)
-  // console.log(task)
-  TaskManager.addTask(task)
+//   const btnSubmit=document.getElementById('btnSubmit')
+// btnSubmit.addEventListener('click', (event) => {
 
+//   event.preventDefault();
+//   console.log("When Submit button ")
+//   if (!validateTaskForm()) {
+//     console.log('validate fails');
+//     return
+//   }
+ 
+//   const task = new TaskManager()
+//   task._taskName = taskForm['taskName'].value
+//   task._desc = taskForm['taskDes'].value
+//   task._status = taskForm['taskStatus'].value
+//   task._assignTo = taskForm['assignTo'].value
+//   task._dueDate = taskForm['dueDate'].value
 
-  const allTasks = task.getTaskList();
+  
+//    console.log(task)
+//    TaskManager.addTask(task)
+ 
+//    // closeForm();
+//   window.location.href = '/second-page.html'
 
-  task.taskListByStatus("To Do");
-
-
-
-
-  // const tasksDiv = task.getTasks()
-  // const displayNames = {
-  //   _id: 'Id',
-  //   _taskName: 'Task Name',
-  //   _desc: 'Description',
-  //   _assignTo: 'Assign To',
-  //   _dueDate: 'Due Date'
-  // }
-
-  // for (let task of allTasks) {
-  //   for (let key in task) {
-  //     console.log(`key is ${key}`)
-  //     const markup = `<span>${displayNames[key]}:${task[key]}<br></span>`
-  //     document.getElementById('taskList').innerHTML += markup
-
-  //   }
-
-  // }
-
-  // closeForm();
-  // window.location.href = '/second-page.html'
-
-})
+// })
 
 
 
@@ -106,8 +77,10 @@ class TaskManager {
   }
 
   static addTask(task) {
+    console.log('in add task')
     task._id = TaskManager.getId()
-    const allTasks = JSON.parse(window.localStorage.getItem('Tasks')) || [];
+    // const allTasks = JSON.parse(window.localStorage.getItem('Tasks')) || [];
+      const allTasks=TaskManager.getTaskList()
     allTasks.push(task)
     window.localStorage.setItem('Tasks', JSON.stringify(allTasks))
 
@@ -123,12 +96,12 @@ class TaskManager {
   }
 
 
-  getTaskList() {
+  static getTaskList() {
 
-    return JSON.parse(window.localStorage.getItem('Tasks'));
+    return JSON.parse(window.localStorage.getItem('Tasks')) || [];
   }
 
-  taskListByStatus(status) {
+  static taskListByStatus(status) {
     console.log("status:" + status);
     // console.log("Task"+task);
     const taskListByStatus = this.getTaskList().filter(task => task._status === status);
@@ -137,8 +110,8 @@ class TaskManager {
     }
     console.log("Task List by" + taskListByStatus);
 
+    return taskListByStatus
   }
-
   
   
 }

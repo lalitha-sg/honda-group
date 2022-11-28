@@ -9,7 +9,7 @@
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/50de1f03ce.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-  <title>Taskii (name to be confirmed)</title>
+  <title>Taskii</title>
 </head>
 
 <body>
@@ -20,9 +20,15 @@
         </a></div>
       <nav class="nav nav-pill nav-fill">
         <a class="nav-item nav-link" href="#" id="addTask">Add Task</a>
-        <a class="nav-item nav-link" href="#">My Completed Tasks</a>
         <a class="nav-item nav-link" href="#">Settings</a>
         <a class="nav-item nav-link" href="#">Log Out</a>
+          <select name="taskFilter" id="taskFilter" class="selectpicker" title="Filter Task by Status">
+            <option class="inactive">Filter Task by Status</option>
+            <option value="To Do">To Do</option>
+            <option value="In Progress">In Progress</option>
+            <option value="review">Reviewing</option>
+            <option value="done">Done</option>
+          </select>
         <span id="todaysDate">Date</span>
       </nav>
 
@@ -106,7 +112,6 @@
           </div>
         </div>
       </div>
-     
       <div class="btn">
         <input class="btn btn-primary" type="submit" value="Submit" id="btnSubmit">
         <input class="btn btn-primary" type="reset" value="Reset">
@@ -114,16 +119,6 @@
       </div>
     </form>
   </div>
-
-   <div style="text-align:center ">
-    <select name="taskFilter" id="taskFilter">
-      <option value="To Do">TO DO</option>
-      <option value="In Progress">In Progress</option>
-      <option value="review">Review</option>
-      <option value="done">Done</option>
-    </select>
-    
-   </div>
   <div id="list-items"></div>
   <!--<div class="card" id="wireframe">
     <a href="./description-kaneez-honda group/description-kaneez.html">

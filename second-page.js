@@ -81,11 +81,11 @@ function myFunction() {
   function addItem(item) {
     const itemHTML = '<div class="card" style="width: 100%;">\n' +
       '        <div class="card-body">\n' +
-      '        <h5 class="card-title text-primary" >' + item._taskName + '</h5>\n' +
-      '        <p class="card-text font-weight-bold">' + 'Assigned to: ' + item._assignTo + '</p>\n' +
-      '        <p class="card-text font-weight-bold">' + 'Status: ' + item._status + '</p>\n' +
+      '        <h5 class="card-title taskName text-primary" >' + item._taskName + '</h5>\n' +
+      '        <p class="card-text font-weight-bold assigned-by">' + 'Assigned to: ' + item._assignTo + '</p>\n' +
+      '        <p class="card-text font-weight-bold status">' + 'Status: ' + item._status + '</p>\n' +
       '        <p class="card-text">' + 'Description: ' + item._desc + '</p>\n' +
-      '        <p class="card-text">' + 'Due Date: ' + new Date(item._dueDate).toLocaleDateString("en-Uk") + '</p>\n' +
+      '        <p class="card-text font-weight-bold dueDate">' + 'Due Date: ' + new Date(item._dueDate).toLocaleDateString("en-Uk") + '</p>\n' +
       '        <a href="#" class="btn btn-primary" id="deleteTaskInfo">Delete</a>\n' +
       '        <a href="#" class="btn btn-primary">Update</a>\n' +
       '    </div>\n' +

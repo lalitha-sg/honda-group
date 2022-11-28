@@ -12,7 +12,12 @@
   width: 100%;
   justify-content:space-around;
 }
-
+.card-text {
+  margin: 15px;
+}
+.taskNameJs {
+  font-size: 1.5rem;
+}
 .nav-link {
   display: block;
   color: #e6f2f8;
@@ -137,10 +142,24 @@ input[type=range] {
     background: #2497E3;
   }
 
-    .assigned-by {
+    .assigned-to {
         text-align: right;
         padding-right: 5%;
         margin-bottom: 0;
+    }
+    .assignTo {
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+    .taskStatus {
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+    .taskDes {
+      margin-top: 15px;
+    }
+    .radio-btns {
+      margin: 5px;
     }
     #wireframe {
       margin-top: 2rem;
@@ -225,6 +244,14 @@ margin-bottom: 0;
     display: flex;
     justify-content: center;
     margin: 0;
+}
+
+.radio {
+  margin: 10px;
+}
+
+.btn {
+  margin: 10px;
 }
 
 

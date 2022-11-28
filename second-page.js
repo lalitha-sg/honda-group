@@ -84,7 +84,7 @@ function myFunction() {
       '        <h5 class="card-title taskNameJs text-primary" >' + item._taskName + '</h5>\n' +
       '        <p class="card-text font-weight-bold assigned-to">' + 'Assigned to: ' + item._assignTo + '</p>\n' +
       '        <p class="card-text font-weight-bold status">' + 'Status: ' + item._status + '</p>\n' +
-      '        <p class="card-text">' + 'Description: ' + item._desc + '</p>\n' +
+      '        <p class="card-text des">' + 'Description: ' + item._desc + '</p>\n' +
       '        <p class="card-text font-weight-bold dueDate">' + 'Due Date: ' + new Date(item._dueDate).toLocaleDateString("en-Uk") + '</p>\n' +
       '        <a href="#" class="btn btn-primary" id="deleteTaskInfo">Delete</a>\n' +
       '        <a href="#" class="btn btn-primary">Update</a>\n' +

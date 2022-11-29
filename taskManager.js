@@ -3,7 +3,7 @@
 // let taskForm = document.getElementById('taskForm')
 // let tasksList = []
 // window.addEventListener('load', () => {
-  
+
 //   console.log(`tasklist :${tasksList}`)
 // })
 
@@ -32,7 +32,7 @@
 //     console.log('validate fails');
 //     return
 //   }
- 
+
 //   const task = new TaskManager()
 //   task._taskName = taskForm['taskName'].value
 //   task._desc = taskForm['taskDes'].value
@@ -40,10 +40,10 @@
 //   task._assignTo = taskForm['assignTo'].value
 //   task._dueDate = taskForm['dueDate'].value
 
-  
+
 //    console.log(task)
 //    TaskManager.addTask(task)
- 
+
 //    // closeForm();
 //   window.location.href = '/second-page.html'
 
@@ -80,7 +80,7 @@ class TaskManager {
     console.log('in add task')
     task._id = TaskManager.getId()
     // const allTasks = JSON.parse(window.localStorage.getItem('Tasks')) || [];
-      const allTasks=TaskManager.getTaskList()
+    const allTasks = TaskManager.getTaskList()
     allTasks.push(task)
     window.localStorage.setItem('Tasks', JSON.stringify(allTasks))
 
@@ -112,22 +112,43 @@ class TaskManager {
 
     return taskListByStatus
   }
-   static updateStatus(id){
-    console.log(`status update of ${id}`)
-    let updatedTasks= this.getTaskList().map(task=>{
-         if(task._id==id){
-          task._status='done'
-         }
-         return task
+  static updateStatus(id) {
+    console.log(`status update of ${id}`);
+
+    if (id.startsWith("delete-")) {
+      TaskManager.deleteTask(id);
+      return;
+    }
+
+    let updatedTasks = this.getTaskList().map(task => {
+      if (task._id == id) {
+        task._status = 'done'
+      }
+      return task;
     })
     console.log(updatedTasks)
-    localStorage.setItem('Tasks',JSON.stringify(updatedTasks))
-   }
-  static deleteTask(id){
-    console.log(`delete id is ${id}`)
-
+    localStorage.setItem('Tasks', JSON.stringify(updatedTasks));
+    window.location.reload(true);
   }
-  
+
+  static deleteTask(id) {
+
+    console.log(`deleting id is ${id}`);
+
+    let allTasks = JSON.parse(localStorage.getItem('Tasks'))
+    console.log("ALL TAKSKK::" + allTasks.length)
+
+    let index = allTasks.findIndex(task => {
+      return task._id == id;
+    });
+
+    console.log("Index::::" + index)
+    allTasks.splice(index, 1);
+    console.log(allTasks);
+
+    window.localStorage.setItem('Tasks', JSON.stringify(allTasks));
+    window.location.reload(true);
+  }
 }
 
 export default TaskManager;

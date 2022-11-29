@@ -264,5 +264,7 @@ margin-bottom: 0;
   margin: 10px;
 }
 
-
+.done {
+  background-color: green !important;
+}
 

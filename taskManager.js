@@ -112,7 +112,21 @@ class TaskManager {
 
     return taskListByStatus
   }
-  
+   static updateStatus(id){
+    console.log(`status update of ${id}`)
+    let updatedTasks= this.getTaskList().map(task=>{
+         if(task._id==id){
+          task._status='done'
+         }
+         return task
+    })
+    console.log(updatedTasks)
+    localStorage.setItem('Tasks',JSON.stringify(updatedTasks))
+   }
+  static deleteTask(id){
+    console.log(`delete id is ${id}`)
+
+  }
   
 }
 

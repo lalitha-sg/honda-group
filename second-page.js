@@ -6,7 +6,29 @@ let taskForm = document.getElementById('taskForm')
 let tasksList = []
 window.addEventListener('load',()=>{
   displayTasks()
+//  let TaskItems= document.getElementById("list-items")
+  
+  let tasks=document.querySelectorAll('.taskId')
+  tasks.forEach(task=>{
+    let id =task.getAttribute('id')
+   
+    task.addEventListener('click',()=>{
+    console.log('click')
+    console.log(id)
+    TaskManager.updateStatus(id)
+    task.style.backgroundColor='green'
+    task.innerHTML='Done'
+
+    })
+  })
+  console.log(tasks)
+  function statusDone(){
+   console.log('status done')
+   console.log('click')
+
+ }
 })
+
 
 const openForm = document.getElementById("addTask");
 openForm.addEventListener('click', addTaskForm)
@@ -85,9 +107,10 @@ function myFunction() {
       '        <p class="card-text font-weight-bold assigned-to">' + 'Assigned to: ' + item._assignTo + '</p>\n' +
       '        <p class="card-text font-weight-bold status">' + 'Status: ' + item._status + '</p>\n' +
       '        <p class="card-text des">' + 'Description: ' + item._desc + '</p>\n' +
+      '        <p class="card-text des">' + 'id: ' + item._id + '</p>\n' +
       '        <p class="card-text font-weight-bold dueDate">' + 'Due Date: ' + new Date(item._dueDate).toLocaleDateString("en-Uk") + '</p>\n' +
       '        <a href="#" class="btn btn-primary" id="deleteTaskInfo">Delete</a>\n' +
-      '        <a href="#" class="btn btn-primary">Update</a>\n' +
+      '        <a href="#" class=" taskId btn btn-primary" id='+item._id+' >Mark Done</a>\n' +
       '    </div>\n' +
       '</div>\n' +
       '<br/>';

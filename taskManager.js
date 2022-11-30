@@ -1,56 +1,3 @@
-// import validateTaskForm from "./inputValidation.js"
-
-// let taskForm = document.getElementById('taskForm')
-// let tasksList = []
-// window.addEventListener('load', () => {
-
-//   console.log(`tasklist :${tasksList}`)
-// })
-
-// const openForm = document.getElementById("addTask");
-// openForm.addEventListener('click', addTaskForm)
-
-
-// const closeForm = document.getElementById("closeForm");
-// closeForm.addEventListener('click', closeTaskForm)
-
-
-// function addTaskForm() {
-//   document.getElementById('taskFormData').style.display = "block";
-// }
-
-// function closeTaskForm() {
-//   document.getElementById('taskFormData').style.display = "none";
-// }
-
-//   const btnSubmit=document.getElementById('btnSubmit')
-// btnSubmit.addEventListener('click', (event) => {
-
-//   event.preventDefault();
-//   console.log("When Submit button ")
-//   if (!validateTaskForm()) {
-//     console.log('validate fails');
-//     return
-//   }
-
-//   const task = new TaskManager()
-//   task._taskName = taskForm['taskName'].value
-//   task._desc = taskForm['taskDes'].value
-//   task._status = taskForm['taskStatus'].value
-//   task._assignTo = taskForm['assignTo'].value
-//   task._dueDate = taskForm['dueDate'].value
-
-
-//    console.log(task)
-//    TaskManager.addTask(task)
-
-//    // closeForm();
-//   window.location.href = '/second-page.html'
-
-// })
-
-
-
 class TaskManager {
   static id = 0;
   constructor(taskName, desc, assignTo, dueDate, status) {
@@ -133,18 +80,13 @@ class TaskManager {
 
   static deleteTask(id) {
 
-    console.log(`deleting id is ${id}`);
-
     let allTasks = JSON.parse(localStorage.getItem('Tasks'))
-    console.log("ALL TAKSKK::" + allTasks.length)
 
     let index = allTasks.findIndex(task => {
       return task._id == id;
     });
 
-    console.log("Index::::" + index)
     allTasks.splice(index, 1);
-    console.log(allTasks);
 
     window.localStorage.setItem('Tasks', JSON.stringify(allTasks));
     window.location.reload(true);

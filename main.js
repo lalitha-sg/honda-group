@@ -6,15 +6,10 @@ let taskForm = document.getElementById('taskForm')
 let tasksList = []
 window.addEventListener('load', () => {
   displayTasks()
-  //  let TaskItems= document.getElementById("list-items")
-
   addButtonEventListener('.taskId');
   addButtonEventListener('.taskId1');
 
-  // function statusDone() {
-  //   console.log('status done')
-  //   console.log('click')
-  // }
+ 
 
 })
 
@@ -31,7 +26,7 @@ function addButtonEventListener(buttonClass) {
       console.log("Id: " + id);
       if (buttonClass == '.taskId')
         TaskManager.updateStatus(id);
-      else if(buttonClass == '.taskId1')
+      else if (buttonClass == '.taskId1')
         TaskManager.deleteTask(id);
     });
   });
@@ -75,9 +70,7 @@ btnSubmit.addEventListener('click', (event) => {
 
   console.log(task)
   TaskManager.addTask(task)
-
-  // closeForm();
-  window.location.href = '/second-page.html'
+  window.location.href = '/index.html'
 
 })
 
@@ -124,10 +117,10 @@ function addItem(item) {
     '        <p class="card-text font-weight-bold dueDate">' + 'Due Date: ' + new Date(item._dueDate).toLocaleDateString("en-Uk") + '</p>\n' +
     '        <a href="#" class="taskId1 btn btn-primary" id=' + item._id + '>Delete</a>\n' +
     ((!status) ?
-      '        <a href="#" class="taskId btn btn-primary  " id=' + item._id + '>' + "Mark Done" + '</a>\n'
-      // : '');
-      :
-      ' <a href="#" class="taskId btn btn-primary done" id=' + item._id + '>' + "Done" + '</a>\n'); +
+      '        <a href="#" class="taskId btn btn-primary  " id=' + item._id + '>' + "Mark Done" + '</a>\n' :
+      '');
+
+  +
   '    </div>\n' +
   '</div>\n' +
   '<br/>';

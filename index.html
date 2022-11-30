@@ -53,12 +53,14 @@
       <div class="taskName">
         <label for="taskName"> Task name:</label><br>
         <input type="text" name="taskName" id="taskName" ><br>
-        <span id="errMsg" style="color: red;"></span>
+        <span id="taskNameSpan" style="color: red;"></span>
       </div>
 
       <div class="taskDes">
         <label for="taskDes"> Description:</label> <br>
         <textarea type="textarea" name="taskDes" id="taskDes" rows="4" cols="30"></textarea>
+        <span id="taskDesSpan" style="color: red;"></span>
+
 
       </div>
 
@@ -70,11 +72,15 @@
           <option>Kaneez</option>
           <option>Kanwar</option>
         </select>
+        <span id="assignToSpan" style="color: red;"></span>
+
       </div>
 
       <div class="dueDate">
         <label for="dueDate"> Due Date:</label>
         <input type="date" name="dueDate" id="dueDate">
+        <span id="dueDateSpan" style="color: red;"></span>
+
       </div>
 
       <div class="taskStatus">

@@ -1,67 +1,270 @@
-html {
-    margin: 0;
-    padding: 0;
-}
-
 * {
-    background-color: #1d3b4d;
     margin: 0;
     padding: 0;
+}
+
+.navbar {
+    height: 105px;
+    display: flex;
+    background-color: #1d3b4d;
+    align-items: center;
+    padding: 0;
+  width: 100%;
+  justify-content:space-around;
+}
+.card-text {
+  margin: 15px;
+}
+.taskNameJs {
+  font-size: 1.5rem;
+}
+.nav-link {
+  display: block;
+  color: #e6f2f8;
+}
+.wrap {
+    display: flex;
+    width: 100%;
+    height: 85px;
+    justify-content: space-around;
+    align-items: center;
+}
+ /* Top of page */
+img {
+    height: 80px;
+    width: 80px;
+}
+.selectpicker {
+  height: 30px;
+  margin-left: 10px;
+  color: white;
+  background-color: #1d3b4d;
+  margin-top: 7px;
+  border: none;
+}
+
+.fa-user-circle {
+    color: #e6f2f8;
+}
+
+.card {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+input[type=range] {
+    height: 25px;
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 50%;
+  }
+  input[type=range]:focus {
     outline: none;
-}
-
-.img {
+  }
+  input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
-    height: 150px;
-    margin-left: 0;
-    margin-right: 0;
-    background-color: #1d3b4d;
-    padding: 0px;
-    align-self: center;
-    object-fit: cover;
-
-}
-
-.logo {
+    height: 5px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000;
+    background: #2497E3;
+    border-radius: 1px;
+    border: 0px solid #000000;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 1px solid #2497E3;
+    height: 18px;
+    width: 18px;
+    border-radius: 25px;
+    background: #A1D0FF;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -7px;
+  }
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #2497E3;
+  }
+  input[type=range]::-moz-range-track {
     width: 100%;
-    height: auto;
-    display: block;
-    margin: auto;
-    background-color: #1d3b4d;
+    height: 5px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000;
+    background: #2497E3;
+    border-radius: 1px;
+    border: 0px solid #000000;
+  }
+  input[type=range]::-moz-range-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 1px solid #2497E3;
+    height: 18px;
+    width: 18px;
+    border-radius: 25px;
+    background: #A1D0FF;
+    cursor: pointer;
+  }
+  input[type=range]::-ms-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  input[type=range]::-ms-fill-lower {
+    background: #2497E3;
+    border: 0px solid #000000;
+    border-radius: 2px;
+    box-shadow: 0px 0px 0px #000000;
+  }
+  input[type=range]::-ms-fill-upper {
+    background: #2497E3;
+    border: 0px solid #000000;
+    border-radius: 2px;
+    box-shadow: 0px 0px 0px #000000;
+  }
+  input[type=range]::-ms-thumb {
+    margin-top: 1px;
+    box-shadow: 0px 0px 0px #000000;
+    border: 1px solid #2497E3;
+    height: 18px;
+    width: 18px;
+    border-radius: 25px;
+    background: #A1D0FF;
+    cursor: pointer;
+  }
+  input[type=range]:focus::-ms-fill-lower {
+    background: #2497E3;
+  }
+  input[type=range]:focus::-ms-fill-upper {
+    background: #2497E3;
+  }
 
+    .assigned-to {
+        text-align: right;
+        padding-right: 5%;
+        margin-bottom: 0;
+    }
+    .assignTo {
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+    .taskStatus {
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+    .taskDes {
+      margin-top: 15px;
+    }
+    .radio-btns {
+      margin: 5px;
+    }
+    #wireframe {
+      margin-top: 2rem;
+  }
 
-}
-
-.form-group {
-    background-color: #1d3b4d;
-    color: #e6f2f8;
-    padding: 0;
+  .dueDate {
+    text-align: right;
+    padding-right: 5%;
     margin-bottom: 0;
-    max-width: 70%;
+  }
+
+  .des {
+    margin-top: 50px;
+  }
+
+  #list-items {
+margin-top: 35px;
+margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 390px) {
+    .wrap {
+        height: 70px;
+    }
+  .navbar {
+    height: 150px;
+  }
+    .nav-pill {
+      margin-top: 5px;
+      height: 80px;
+      font-size: 0.75rem;
+      width: 80%;
+      padding-bottom: 2px;
+      align-content: space-around;
+    }
+    #todaysDate {
+      position: absolute;
+      margin-top: 90px;
+      margin-left: 55%;
+      font-size: 0.6rem;
+    }
+  }
+
+@media screen and (min-width: 768px) {
+
+  .nav-pill {
+    margin-top: 10px;
+  }
+
+  #todaysDate {
+    position: absolute;
+    margin-top: 45px;
+    margin-left: 63%;
+    font-size: 0.6rem;
+  }
 }
 
-.form-control {
-    margin-left: 20%;
+@media screen and (min-width: 1000px) {
+
+  .nav-pill {
+    margin-top: 10px;
+  }
+
+  #todaysDate {
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 60%;
+    font-size: 0.6rem;
+  }
 }
 
-.words {
-    margin-left: 20%;
+  .newTask {
+    width: 60%;
+    margin: 20px auto;
+    border: 2px solid gray;
+    text-align: center;
+    padding: 20px;
+
 }
 
-.btn-primary {
-    margin-left: 45%;
-    margin-top: 15px;
+
+.taskForm{
+   border: gray solid 2px; 
 }
 
-#email-help {
+
+  .taskStatus {
+    text-align: center;
+  }
+
+.radio-btns {
+    display: flex;
+    justify-content: center;
     margin: 0;
 }
 
-.new-sign-in {
-    color: white;
-    margin-left: 15%;
+.radio {
+  margin: 10px;
 }
 
-a .sign-up {
-    color: #e6f2f8;
+.btn {
+  margin: 10px;
 }
+
+.done {
+  background-color: green !important;
+}
+

@@ -104,7 +104,6 @@ class TaskManager {
       '        <p class="card-text font-weight-bold assigned-to">' + 'Assigned to: ' + item._assignTo + '</p>\n' +
       '        <p class="card-text font-weight-bold status">' + 'Status: ' + item._status + '</p>\n' +
       '        <p class="card-text des">' + 'Description: ' + item._desc + '</p>\n' +
-      '        <p class="card-text des">' + 'id: ' + item._id + '</p>\n' +
       '        <p class="card-text font-weight-bold dueDate">' + 'Due Date: ' + new Date(item._dueDate).toLocaleDateString("en-Uk") + '</p>\n' +
       '        <a href="#" class="taskId1 btn btn-primary" id=' + item._id + '>Delete</a>\n' +
       ((!status) ?

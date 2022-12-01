@@ -8,6 +8,8 @@ html {
     margin: 0;
     padding: 0;
     outline: none;
+    box-sizing: border-box;
+    transition: all ease-in .5s;
 }
 
 .img {

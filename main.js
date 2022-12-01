@@ -1,4 +1,4 @@
-import TaskManager from './TaskManager.js'
+import TaskManager from './taskManager.js'
 
 import validateTaskForm from "./inputValidation.js"
 

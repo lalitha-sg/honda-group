@@ -7,14 +7,14 @@ let taskForm = document.getElementById('taskForm')
 const taskManager = new TaskManager();
 let allTasks = TaskManager.getTaskList();
 window.addEventListener('load', () => {
-  displayTasks()   //load tasks in DOM
-  addTask()    //add task 
-  filterTasks()    //filter tasks
-  addButtonEventListener('.taskId');  //mark done and delete tasks
-  addButtonEventListener('.taskId1');  //mark done and delete tasks
+  displayTasks() //load tasks in DOM
+  addTask() //add task 
+  filterTasks() //filter tasks
+  addButtonEventListener('.taskId'); //mark as done tasks
+  addButtonEventListener('.taskId1'); //delete tasks
   displayDate() //display date in header
 
- 
+
 
 })
 
@@ -42,24 +42,24 @@ function addButtonEventListener(buttonClass) {
 const openForm = document.getElementById("addTask");
 openForm.addEventListener('click', addTaskForm)
 
-
 const closeForm = document.getElementById("closeForm");
 closeForm.addEventListener('click', closeTaskForm)
 
-
+//Open the form when click Add Task
 function addTaskForm() {
   document.getElementById('taskFormData').style.display = "block";
 }
 
+//Close the task form when click close 
 function closeTaskForm() {
   document.getElementById('taskFormData').style.display = "none";
 }
 
-
-function addTask(){
+// Add Task and setting form values to Class Taskmanager
+function addTask() {
   const btnSubmit = document.getElementById('btnSubmit')
   btnSubmit.addEventListener('click', (event) => {
-  
+
     event.preventDefault();
     console.log("When Submit button ")
     if (!validateTaskForm()) {
@@ -78,9 +78,9 @@ function addTask(){
     window.location.reload()
 
   })
-  }
+}
 
-
+// Display date in main page
 function displayDate() {
   let date = document.getElementById("todaysDate");
   let d = new Date();
@@ -90,26 +90,24 @@ function displayDate() {
   document.getElementById("todaysDate").style.color = "white";
 }
 
-function filterTasks(){
-
+// Getting task list by status
+function filterTasks() {
   let taskFilter = document.getElementById('taskFilter')
   console.log(`task filter ${taskFilter.value}`)
   taskFilter.addEventListener('change', () => {
-    console.log('in select')
-    console.log(taskFilter.value)
     allTasks = TaskManager.taskListByStatus(taskFilter.value);
-    console.log(allTasks)
     document.getElementById("list-items").innerHTML = ''
     displayTasks()
   })
 }
 
+// Display tasks
 function displayTasks() {
   const itemsContainer = document.getElementById("list-items");
-  if(!allTasks.length) itemsContainer.innerHTML='<h2 class="text-center">No Tasks To Show</h2>'
+  if (!allTasks.length) itemsContainer.innerHTML = '<h2 class="text-center">No Tasks To Show</h2>'
   allTasks.map(task => {
     console.log("Display Tasks: " + JSON.stringify(task));
-    let itemHTML= TaskManager.addTaskHtml(task);
+    let itemHTML = TaskManager.addTaskHtml(task);
     itemsContainer.innerHTML += itemHTML;
 
   })

@@ -23,6 +23,7 @@ class TaskManager {
     return this._status;
   }
 
+  //Add task deatils to local starage
   static addTask(task) {
     console.log('in add task')
     task._id = TaskManager.getId()
@@ -34,6 +35,8 @@ class TaskManager {
 
   }
 
+
+  // Getting last index id from the localstorage
   static getId() {
     let allTasks = JSON.parse(localStorage.getItem('Tasks')) || []
     let lastTask = allTasks ? allTasks.pop() : null
@@ -43,11 +46,13 @@ class TaskManager {
   }
 
 
+  //Getting Task list from Localstorage
   static getTaskList() {
 
     return JSON.parse(window.localStorage.getItem('Tasks')) || [];
   }
 
+  //Getting tasklist by status
   static taskListByStatus(status) {
     console.log("status:" + status);
     // console.log("Task"+task);
@@ -55,17 +60,12 @@ class TaskManager {
     for (let i of taskListByStatus) {
       console.log(i);
     }
-    console.log("Task List by" + taskListByStatus);
-
     return taskListByStatus
   }
+
+  //Update status - Mark as done to done - setting status to localstorage 
   static updateStatus(id) {
     console.log(`status update of ${id}`);
-
-    if (id.startsWith("delete-")) {
-      TaskManager.deleteTask(id);
-      return;
-    }
 
     let updatedTasks = this.getTaskList().map(task => {
       if (task._id == id) {
@@ -73,11 +73,11 @@ class TaskManager {
       }
       return task;
     })
-    console.log(updatedTasks)
     localStorage.setItem('Tasks', JSON.stringify(updatedTasks));
     window.location.reload(true);
   }
 
+  // Delete task from local storage
   static deleteTask(id) {
 
     let allTasks = JSON.parse(localStorage.getItem('Tasks'))
@@ -92,9 +92,11 @@ class TaskManager {
     window.location.reload(true);
   }
 
-  static  addTaskHtml(item) {
+
+  // Add task cards to main page
+  static addTaskHtml(item) {
     let status = (item._status == 'done') ? true : false;
-  
+
     console.log("Status: " + status + " ," + item._status);
     let itemHTML = '<div class="card" style="width: 100%;">\n' +
       '        <div class="card-body">\n' +
@@ -108,7 +110,7 @@ class TaskManager {
       ((!status) ?
         '        <a href="#" class="taskId btn btn-primary  " id=' + item._id + '>' + "Mark Done" + '</a>\n' :
         '');
-  
+
     +
     '    </div>\n' +
     '</div>\n' +

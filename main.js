@@ -1,4 +1,4 @@
-import TaskManager from './TaskManager.js'
+import TaskManager from './taskManager.js'
 
 import validateTaskForm from "./inputValidation.js"
 
@@ -20,7 +20,7 @@ window.addEventListener('load', () => {
 
 function addButtonEventListener(buttonClass) {
   let tasks = document.querySelectorAll(buttonClass);
-
+     console.log('in event listener')
   console.log("Tasks: " + JSON.stringify(tasks));
 
   tasks.forEach(task => {
@@ -98,6 +98,8 @@ function filterTasks() {
     allTasks = TaskManager.taskListByStatus(taskFilter.value);
     document.getElementById("list-items").innerHTML = ''
     displayTasks()
+    addButtonEventListener('.taskId'); //mark as done tasks
+  addButtonEventListener('.taskId1'); //delete tasks
   })
 }
 

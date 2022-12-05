@@ -79,7 +79,7 @@ class TaskManager {
 
   // Delete task from local storage
   static deleteTask(id) {
-
+         console.log('in delete')
     let allTasks = JSON.parse(localStorage.getItem('Tasks'))
 
     let index = allTasks.findIndex(task => {
